@@ -1,5 +1,9 @@
 import React from 'react';
+
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
 import { HeroImage } from '../../components/HeroImage';
+import CharactersPagination from '../../components/CharactersPagination';
 
 import {
   Container,
@@ -7,11 +11,13 @@ import {
   SearchBar,
   IconWrapper,
   Icon,
+  Content,
 } from './styles';
 
 export function Home() {
   return (
     <Container>
+      <Header />
       <HeroImage title={['Explore the most powerful', 'characters in Marvel']}>
         <SearchBarWrapper>
           <SearchBar />
@@ -20,6 +26,12 @@ export function Home() {
           </IconWrapper>
         </SearchBarWrapper>
       </HeroImage>
+
+      <Content>
+        <CharactersPagination />
+      </Content>
+
+      <Footer />
     </Container>
   );
 }

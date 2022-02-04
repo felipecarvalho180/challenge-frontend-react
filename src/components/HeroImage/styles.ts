@@ -5,7 +5,6 @@ import bannerImage from '../../assets/banner.png';
 export const Banner = styled.div`
   display: flex;
   width: 100%;
-  height: 491px;
   background-image: url(${bannerImage});
   background-position: center;
   justify-content: center;
@@ -13,7 +12,11 @@ export const Banner = styled.div`
   flex-direction: column;
 `;
 
-export const BannerContent = styled.div``;
+export const BannerContent = styled.div`
+  padding: 20px;
+  margin-top: 132px;
+  margin-bottom: 163px;
+`;
 
 export const TitleWrapper = styled.div`
   margin-bottom: 38px;

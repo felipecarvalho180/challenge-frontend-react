@@ -8,7 +8,10 @@ export const Container = styled.div`
 export const SearchBarWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  width: 670px;
+
+  @media (min-width: 1024px) {
+    width: 670px;
+  }
 `;
 
 export const SearchBar = styled.input.attrs({
@@ -32,7 +35,7 @@ export const SearchBar = styled.input.attrs({
   }
 `;
 
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,9 +43,18 @@ export const IconWrapper = styled.div`
   height: 70px;
   background-color: ${({ theme }) => theme.colors.secondary};
   border-top-right-radius: 20px;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.secondaryHover};
+  }
 `;
 
 export const Icon = styled(BiSearchAlt2)`
   color: ${({ theme }) => theme.colors.text};
   font-size: 28px;
+`;
+
+export const Content = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
+  padding: 41px 215px;
 `;
