@@ -4,7 +4,6 @@ import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { HeroImage } from '../../components/HeroImage';
 import CharactersPagination from '../../components/CharactersPagination';
-
 import {
   Container,
   SearchBarWrapper,
