@@ -1,6 +1,7 @@
 export default {
   colors: {
     primary: '#212121',
+    primaryOpacity: '#212121B3',
     secondary: '#F43735',
     secondaryHover: '#E9100C',
     text: '#FFFFFF',

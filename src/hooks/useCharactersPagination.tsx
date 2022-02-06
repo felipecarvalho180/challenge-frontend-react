@@ -1,9 +1,12 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useContext, useMemo, useState } from 'react';
 
 import { Character } from '../@types/characters';
+import { LoadingContext } from '../context/LoadingContext';
 import { getCharacters } from '../services/characters';
 
 export function useCharactersPagination() {
+  const { updateLoading } = useContext(LoadingContext);
+
   const [activeCharacterName, setActiveCharacterName] = useState<string>();
   const [characters, setCharacters] = useState<Character[]>([] as Character[]);
   const [totalCharacters, setTotalCharacters] = useState<number>(0);
@@ -30,6 +33,7 @@ export function useCharactersPagination() {
   }, [pageIndex, totalCharacters]);
 
   const initialGet = useCallback(async () => {
+    updateLoading(true);
     try {
       const response = await getCharacters({ offset });
       console.log(response.results);
@@ -42,10 +46,13 @@ export function useCharactersPagination() {
       if (error instanceof TypeError) {
         console.error(error.message);
       }
+    } finally {
+      updateLoading(false);
     }
   }, []);
 
   const handleNextPagination = useCallback(async () => {
+    updateLoading(true);
     try {
       const response = await getCharacters({
         offset: offset + 8,
@@ -58,10 +65,13 @@ export function useCharactersPagination() {
       if (error instanceof TypeError) {
         console.error(error.message);
       }
+    } finally {
+      updateLoading(false);
     }
   }, [offset, pageIndex, activeCharacterName]);
 
   const handlePrevPagination = useCallback(async () => {
+    updateLoading(true);
     try {
       const response = await getCharacters({
         offset: offset - 8,
@@ -75,11 +85,14 @@ export function useCharactersPagination() {
       if (error instanceof TypeError) {
         console.error(error.message);
       }
+    } finally {
+      updateLoading(false);
     }
   }, [offset, pageIndex, activeCharacterName]);
 
   const handlePageNumberSelected = useCallback(
     async (pageNumber: number) => {
+      updateLoading(true);
       try {
         const response = await getCharacters({
           offset: pageNumber * 8 - 8,
@@ -92,12 +105,15 @@ export function useCharactersPagination() {
         if (error instanceof TypeError) {
           console.error(error.message);
         }
+      } finally {
+        updateLoading(false);
       }
     },
     [pageIndex, activeCharacterName],
   );
 
   const handleSearchByString = useCallback(async (characterName?: string) => {
+    updateLoading(true);
     try {
       setActiveCharacterName(characterName);
       const response = await getCharacters({ offset: 0, characterName });
@@ -110,6 +126,8 @@ export function useCharactersPagination() {
       if (error instanceof TypeError) {
         console.error(error.message);
       }
+    } finally {
+      updateLoading(false);
     }
   }, []);
 

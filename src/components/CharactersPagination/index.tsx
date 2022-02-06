@@ -62,7 +62,7 @@ function PaginationComponent({
             </PageIndexNumbers>
           ))}
           {!listNumbers.find(
-            (number) => number === Math.round(Number(totalCharacters) / 8 - 1),
+            (number) => number === Math.round(Number(totalCharacters) / 8),
           ) &&
             listNumbers.length > 2 && (
               <>
@@ -70,11 +70,11 @@ function PaginationComponent({
                 <PageIndexNumbers
                   onClick={() =>
                     handlePageNumberSelected(
-                      Math.round(Number(totalCharacters) / 8 - 1),
+                      Math.round(Number(totalCharacters) / 8),
                     )
                   }
                 >
-                  {Math.round(Number(totalCharacters) / 8 - 1)}
+                  {Math.round(Number(totalCharacters) / 8)}
                 </PageIndexNumbers>
               </>
             )}
