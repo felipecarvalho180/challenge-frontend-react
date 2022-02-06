@@ -58,3 +58,22 @@ export const Content = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   padding: 41px 215px;
 `;
+
+export const ContentHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`;
+
+export const Title = styled.h1`
+  font-size: 42px;
+  line-height: 49px;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const Results = styled.span`
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: ${({ theme }) => theme.colors.primary};
+`;

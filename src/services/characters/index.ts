@@ -6,10 +6,15 @@ import {
 
 const { REACT_APP_API_KEY } = process.env;
 
-export async function getCharacters({ offset }: GetCharactersProps) {
+export async function getCharacters({
+  offset,
+  characterName,
+}: GetCharactersProps) {
   try {
     const response = await api.get<ResponseGetCharactersProps>(
-      `/characters?limit=8&offset=${offset}&apikey=${REACT_APP_API_KEY}`,
+      `/characters?limit=8&offset=${offset}&apikey=${REACT_APP_API_KEY}${
+        characterName ? `&nameStartsWith=${characterName}` : ''
+      }`,
     );
 
     return response.data.data;

@@ -7,5 +7,6 @@ export default {
     textGray: '#999999',
     placeholder: '#858585',
     background: '#F5F5F5',
+    disabled: '#959595',
   },
 };

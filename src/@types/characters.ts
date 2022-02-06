@@ -1,5 +1,5 @@
 export interface Character {
-  id: 'int';
+  id: number;
   name: 'string';
   description: 'string';
   modified: 'Date';
@@ -15,8 +15,8 @@ export interface Character {
     extension: 'string';
   };
   comics: {
-    available: 'int';
-    returned: 'int';
+    available: number;
+    returned: number;
     collectionURI: 'string';
     items: [
       {
@@ -26,8 +26,8 @@ export interface Character {
     ];
   };
   stories: {
-    available: 'int';
-    returned: 'int';
+    available: number;
+    returned: number;
     collectionURI: 'string';
     items: [
       {
@@ -38,8 +38,8 @@ export interface Character {
     ];
   };
   events: {
-    available: 'int';
-    returned: 'int';
+    available: number;
+    returned: number;
     collectionURI: 'string';
     items: [
       {
@@ -49,8 +49,8 @@ export interface Character {
     ];
   };
   series: {
-    available: 'int';
-    returned: 'int';
+    available: number;
+    returned: number;
     collectionURI: 'string';
     items: [
       {

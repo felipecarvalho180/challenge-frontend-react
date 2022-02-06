@@ -1,21 +1,22 @@
 export interface GetCharactersProps {
   offset: number;
+  characterName?: string;
 }
 
 export interface ResponseGetCharactersProps {
-  code: 'int';
+  code: number;
   status: 'string';
   copyright: 'string';
   attributionText: 'string';
   attributionHTML: 'string';
   data: {
-    offset: 'int';
-    limit: 'int';
-    total: 'int';
-    count: 'int';
+    offset: number;
+    limit: number;
+    total: number;
+    count: number;
     results: [
       {
-        id: 'int';
+        id: number;
         name: 'string';
         description: 'string';
         modified: 'Date';
@@ -31,8 +32,8 @@ export interface ResponseGetCharactersProps {
           extension: 'string';
         };
         comics: {
-          available: 'int';
-          returned: 'int';
+          available: number;
+          returned: number;
           collectionURI: 'string';
           items: [
             {
@@ -42,8 +43,8 @@ export interface ResponseGetCharactersProps {
           ];
         };
         stories: {
-          available: 'int';
-          returned: 'int';
+          available: number;
+          returned: number;
           collectionURI: 'string';
           items: [
             {
@@ -54,8 +55,8 @@ export interface ResponseGetCharactersProps {
           ];
         };
         events: {
-          available: 'int';
-          returned: 'int';
+          available: number;
+          returned: number;
           collectionURI: 'string';
           items: [
             {
@@ -65,8 +66,8 @@ export interface ResponseGetCharactersProps {
           ];
         };
         series: {
-          available: 'int';
-          returned: 'int';
+          available: number;
+          returned: number;
           collectionURI: 'string';
           items: [
             {

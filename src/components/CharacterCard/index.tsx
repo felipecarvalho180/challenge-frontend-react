@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTheme } from 'styled-components';
 
 import { Character } from '../../@types/characters';
 
@@ -14,8 +13,6 @@ import {
 } from './styles';
 
 export function CharacterCard({ name, thumbnail, description }: Character) {
-  const theme = useTheme();
-
   return (
     <Container>
       <CharacterImage url={`${thumbnail.path}.${thumbnail.extension}`} />
