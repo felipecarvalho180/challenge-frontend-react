@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { MdGroup } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 interface CharacterImageProps {
   url: string;
@@ -9,13 +10,15 @@ interface IconProps {
   selected?: boolean;
 }
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 270px;
   height: 370px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  text-decoration: none;
+  background-color: ${({ theme }) => theme.colors.text};
 `;
 
 export const CharacterImage = styled.div<CharacterImageProps>`

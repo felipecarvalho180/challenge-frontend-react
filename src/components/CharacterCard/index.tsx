@@ -14,7 +14,7 @@ import {
 
 export function CharacterCard({ name, thumbnail, description }: Character) {
   return (
-    <Container>
+    <Container to="profile">
       <CharacterImage url={`${thumbnail.path}.${thumbnail.extension}`} />
       <Content>
         <FavoriteButton>

@@ -47,7 +47,10 @@ export function Home() {
   return (
     <Container>
       <Header />
-      <HeroImage title={['Explore the most powerful', 'characters in Marvel']}>
+      <HeroImage
+        title={['Explore the most powerful', 'characters in Marvel']}
+        alignCenter
+      >
         <SearchBarWrapper>
           <SearchBar
             onChange={(e) => setCharacterName(e.target.value)}

@@ -4,6 +4,7 @@ export default {
     primaryOpacity: '#212121B3',
     secondary: '#F43735',
     secondaryHover: '#E9100C',
+    secondaryLight: '#FFCDD2',
     text: '#FFFFFF',
     textGray: '#999999',
     placeholder: '#858585',

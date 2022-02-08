@@ -1,11 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { Home } from './pages/Home';
 import theme from './styles/theme';
 import GlobalStyle from './styles/globalStyles';
 import { Loading } from './components/Loading';
 import LoadingProvider from './context/LoadingProvider';
+import { Router } from './router';
 
 export function App() {
   return (
@@ -13,7 +13,7 @@ export function App() {
       <LoadingProvider>
         <Loading />
         <GlobalStyle />
-        <Home />
+        <Router />
       </LoadingProvider>
     </ThemeProvider>
   );

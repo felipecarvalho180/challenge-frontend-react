@@ -18,7 +18,7 @@ export function Header() {
         <LogoTitle>Marvel Strike Team</LogoTitle>
       </LogoWrapper>
 
-      <TeamButton>
+      <TeamButton to="favorites">
         <TeamButtonText>Your team</TeamButtonText>
         <TeamButtonIcon />
       </TeamButton>

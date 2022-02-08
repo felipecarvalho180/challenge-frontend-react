@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { FaUsers } from 'react-icons/fa';
 
 import logoImage from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ export const LogoTitle = styled.span`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-export const TeamButton = styled.button`
+export const TeamButton = styled(Link)`
   display: flex;
   align-items: center;
   padding: 15px;
@@ -41,6 +42,7 @@ export const TeamButton = styled.button`
   border-bottom-right-radius: 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 20px;
+  text-decoration: none;
 
   :hover {
     background-color: ${({ theme }) => theme.colors.secondaryHover};
